@@ -1,7 +1,14 @@
+import { useState } from "react";
 import SearchBar from "../components/Searchbar";
 
 
 const Home = () => {
+
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (searchQuery) => {
+    setQuery(searchQuery);
+  }
 
   return (
     <div className="bg-(--primary-color) flex min-h-screen">
@@ -12,11 +19,16 @@ const Home = () => {
           <header className="bg-(--primary-color-dark) p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
               <p className="text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
-              <SearchBar  Text="Put your URL here" className="text-center bg-(--secondary-color) p-4 rounded-lg"></SearchBar>
+              <SearchBar  
+                Text="Put your URL here" 
+                className="text-center bg-(--secondary-color) p-4 rounded-lg"
+                onSearch={handleSearch}
+              />
             </h1>
           </header>
           <main className="p-4">
             <p>Output recipe here</p>
+            {query}
           </main>
         </div>
       </div>

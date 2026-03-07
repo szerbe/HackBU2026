@@ -6,9 +6,6 @@ const SearchBar = ({Text, onSearch, className }) => {
   const handleInputChange = (e) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
-    if (onSearch) {
-      onSearch(newQuery);
-    }
   };
 
   const handleSubmit = (e) => {
@@ -27,6 +24,7 @@ const SearchBar = ({Text, onSearch, className }) => {
         onChange={handleInputChange}
       />
       <button type="submit">Search</button>
+      <p></p>
     </form>
   );
 }; 
