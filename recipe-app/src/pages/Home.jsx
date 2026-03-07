@@ -1,3 +1,6 @@
+import SearchBar from "../components/Searchbar";
+
+
 const Home = () => {
 
   return (
@@ -9,6 +12,7 @@ const Home = () => {
           <header className="bg-[var(--primary-color)] p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
               <p className="text-white">Hi!</p>
+              <SearchBar>Type text here</SearchBar>
             </h1>
           </header>
           <main className="p-4">
