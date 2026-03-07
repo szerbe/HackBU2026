@@ -16,18 +16,18 @@ const Home = () => {
         className={`flex-1 transition-all duration-300 ease-in-out rounded-sm-r`}
       >
         <div className="p-8">
-          <header className="bg-(--primary-color-dark) p-4 rounded-sm">
+          <header className="bg-(--primary-color-accent-one) p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
-              <p className="font-['Cal_Sans'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
+              <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
               <SearchBar  
                 Text="Put your URL here" 
-                className="text-center bg-(--secondary-color) p-4 rounded-lg"
+                className="font-['Patrick_Hand'] center text-center inline-block bg-(--primary-color-accent-two) p-4 rounded-lg"
                 onSearch={handleSearch}
               />
             </h1>
           </header>
           <main className="p-4">
-            <p>image</p>
+            <p><button></button></p>
           </main>
         </div>
       </div>
