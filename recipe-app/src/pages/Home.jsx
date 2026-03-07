@@ -9,9 +9,9 @@ const Home = () => {
         className={`flex-1 transition-all duration-300 ease-in-out rounded-sm-r`}
       >
         <div className="p-8">
-          <header className="bg-[var(--primary-color)] p-4 rounded-sm">
+          <header className="bg-primary p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
-              <p className="text-white">Hi!</p>
+              <p className="text-secondary">Hi!</p>
               <SearchBar>Type text here</SearchBar>
             </h1>
           </header>
