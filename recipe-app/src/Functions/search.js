@@ -1,4 +1,4 @@
-export function onSearch(query){
+export function search(query){
   const { spawn } = require('child_process');
   let args = ['getInfo.py'];
   args.push(query);
