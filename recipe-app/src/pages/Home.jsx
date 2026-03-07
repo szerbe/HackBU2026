@@ -18,7 +18,7 @@ const Home = () => {
         <div className="p-8">
           <header className="bg-(--primary-color-dark) p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
-              <p className="text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
+              <p className="font-['Cal_Sans'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
               <SearchBar  
                 Text="Put your URL here" 
                 className="text-center bg-(--secondary-color) p-4 rounded-lg"
@@ -27,8 +27,7 @@ const Home = () => {
             </h1>
           </header>
           <main className="p-4">
-            <p>Output recipe here</p>
-            <p>{query}</p>
+            <p>image</p>
           </main>
         </div>
       </div>
