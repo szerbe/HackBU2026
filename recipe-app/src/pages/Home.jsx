@@ -1,5 +1,4 @@
 import SearchBar from "../components/Searchbar";
-import onSearch from "../Functions/search";
 
 
 const Home = () => {

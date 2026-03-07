@@ -24,6 +24,7 @@ const SearchBar = ({Text, onSearch, className }) => {
         type="text"
         placeholder={Text}
         value={query}
+        onChange={handleInputChange}
       />
       <button type="submit">Search</button>
     </form>
