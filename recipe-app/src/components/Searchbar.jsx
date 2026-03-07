@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({Text, onSearch, className }) => {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (e) => {
@@ -19,10 +19,10 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={className}>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder={Text}
         value={query}
         onChange={handleInputChange}
       />
