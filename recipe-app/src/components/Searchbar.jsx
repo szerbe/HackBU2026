@@ -26,7 +26,6 @@ const SearchBar = ({Text, onSearch, className }) => {
         />
         <button type="submit">Search</button>
       </form>
-      <p>Instructions: {query}</p>
     </div>
   );
 }; 
