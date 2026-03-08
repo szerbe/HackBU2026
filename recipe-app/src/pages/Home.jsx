@@ -11,6 +11,12 @@ const Home = () => {
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
   }
+
+  const handleMetricConversion = () => {
+    alert("Button was clicked!");
+    // You can put any JavaScript code here
+  };
+
   const [data, setdata] = useState({
         name: "",
         age: 0,
@@ -54,7 +60,11 @@ const Home = () => {
           <main className="p-4">
             <div className="grid place-items-center font-['Patrick_Hand'] p-4">
               <div className="text-left">
-                <p>Output recipe here</p>
+                <p>Output recipe here <button 
+                  onClick={handleMetricConversion} 
+                  class="sml-btn">Convert to metric!
+                  </button>
+                </p>
                     {/* Calling a data from setdata for showing */}
                     <p><CheckBox label={" " + data.name}/></p>
                     <p>{data.age}</p>
