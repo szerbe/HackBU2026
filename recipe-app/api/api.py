@@ -1,7 +1,7 @@
 from flask import Flask, request
 from recipe_scrapers import scrape_me
 
-
+# Initializing flask app
 app = Flask(__name__)
 
 #takes url as a string

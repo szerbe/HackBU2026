@@ -16,7 +16,7 @@ const SearchBar = ({Text, onSearch, className }) => {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <form onSubmit={handleSubmit} className={className}>
         <input
           type="text"
@@ -24,7 +24,10 @@ const SearchBar = ({Text, onSearch, className }) => {
           value={query}
           onChange={handleInputChange}
         />
-        <button type="submit">Search</button>
+        <button 
+          type="submit" 
+          class="btn">Search
+        </button>
       </form>
     </div>
   );
