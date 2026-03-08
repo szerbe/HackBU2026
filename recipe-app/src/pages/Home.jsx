@@ -23,7 +23,7 @@ const Home = () => {
     formData.append('data', searchQuery);
   
 
-    fetch("https://hackbu2026-bnxx.onrender.com/data", {
+    fetch("http://127.0.0.1:5000/data", {
           method: 'POST',
           body: formData 
     }).then(res => res.json())

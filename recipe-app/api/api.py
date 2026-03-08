@@ -10,11 +10,7 @@ CORS(app)
 @app.route('/data', methods=['POST'])
 def get_info():
     data = request.form.get('data')
-    #added user header
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
-    scraper = scrape_me(data, headers=headers)
+    scraper = scrape_me(data)
     return scraper.to_json()
 
 
