@@ -18,13 +18,13 @@ const Home = () => {
       >
         <div className="p-8">
           <header className="bg-(--primary-color-accent-one) p-4 rounded-sm">
-            <h1 className="text-3xl font-bold">
-              <div className="flex text-center justify-content-center align-items-center gap-4">
+            <h1 className="w-full text-3xl font-bold">
+              <div className="flex text-center justify-center items-center gap-4">
                 <img src={cake} alt="Cake" className="w-9 h-10 display-flex" />
                 <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
               </div>
               <SearchBar  
-                Text="Put your URL here" 
+                Text="Put your recipe link here!" 
                 className="font-['Patrick_Hand'] center text-center inline-block bg-(--primary-color-accent-two) p-4 rounded-lg"
                 onSearch={handleSearch}
               />
