@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "../components/Searchbar";
-import CheckBox from "../components/Checkbox";
 import cake from "./cake.svg";
-//import recipe from "../svgs/recipe.svg";
 
 const Home = () => {
 
   const [query, setQuery] = useState("");
+
+  const [searched, setSearched] = useState(false);
 
   const [data, setdata] = useState({
     name: "",
@@ -17,6 +17,7 @@ const Home = () => {
 
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
+    setSearched(true);
 
     const formData = new FormData();
     formData.append('data', searchQuery);
@@ -63,6 +64,7 @@ const Home = () => {
           </header>
           <main className="p-4">
             <div className="grid place-items-center font-['Patrick_Hand'] p-4">
+              {searched ? 
               <div className="recipe-output">
                 <h2>{data.name}</h2>
                 <p>Prep + Cook Time: {data.time} minutes</p>
@@ -72,7 +74,9 @@ const Home = () => {
                 </ul>
                 <h3>Instructions:</h3>
                 <p>{data.instructions}</p>
-              </div>
+              </div> :
+              ' '
+              }
             </div>
           </main>
         </div>
