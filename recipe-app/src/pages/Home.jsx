@@ -45,7 +45,7 @@ const Home = () => {
                 <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
               </div>
               <SearchBar  
-                Text="Put your URL here" 
+                Text="Put your recipe link here!" 
                 className="font-['Patrick_Hand'] center text-center inline-block bg-(--primary-color-accent-two) p-4 rounded-lg"
                 onSearch={handleSearch}
               />
