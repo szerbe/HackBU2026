@@ -2,9 +2,14 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/api/status', methods=['GET'])
-def status_check():
-    return jsonify({"status": "OK", "message": "Server is running"})
+@app.route('/data')
+def get_time():
+    return jsonify({
+        'Name':"geek", 
+        "Age":"22",
+        "programming":"python"
+        })
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
