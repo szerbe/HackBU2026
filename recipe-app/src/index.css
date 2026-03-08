@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import "tailwindcss";
 
 :root {
   --primary-color: #c9edff;
-  --primary-color-dark: #afdcff;
-  --secondary-color: #ff29d8;
+  --primary-color-accent-one: #afdcff;
+  --primary-color-accent-two: #0492c2;
+  --primary-color-accent-three: #08457e;
+  --primary-color-accent-four: #062e60;
 
   --t-color: #333333;
+}
+
+.btn {
+  @apply 
+  border-2
+  px-4 
+  py-2
+  rounded 
+  font-semibold 
+  border-(--primary-color-accent-four)
+  transition duration-150 ease-in-out;
+}
+
+.btn:hover {
+  @apply 
+  bg-(--primary-color-accent-four) shadow-lg;
 }
