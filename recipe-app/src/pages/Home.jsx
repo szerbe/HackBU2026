@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "../components/Searchbar";
+import CheckBox from "../components/Checkbox";
 import cake from "./cake.svg";
 //import recipe from "../svgs/recipe.svg";
 
@@ -24,7 +25,6 @@ const Home = () => {
                 setdata({
                     name: data.Name,
                     age: data.Age,
-                    date: data.Date,
                     programming: data.programming,
                 });
             })
@@ -40,8 +40,8 @@ const Home = () => {
         <div className="p-8">
           <header className="bg-(--primary-color-accent-one) p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
-              <div className="flex text-center justify-content-center align-items-center gap-4">
-                <img src={cake} alt="Cake" className="w-9 h-10 display-flex" />
+              <div className="flex justify-center items-center">
+                <img src={cake} alt="Cake" className="w-9 h-10 display-flex"/>
                 <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
               </div>
               <SearchBar  
@@ -52,14 +52,15 @@ const Home = () => {
             </h1>
           </header>
           <main className="p-4">
-            <div className="inline-block center">
-              <p>Output recipe here</p>
-              <h1>React and flask</h1>
-                  {/* Calling a data from setdata for showing */}
-                  <p>{data.name}</p>
-                  <p>{data.age}</p>
-                  <p>{data.date}</p>
-                  <p>{data.programming}</p>
+            <div className="grid place-items-center font-['Patrick_Hand'] p-4">
+              <div className="text-left">
+                <p>Output recipe here</p>
+                    {/* Calling a data from setdata for showing */}
+                    <p><CheckBox label={" " + data.name}/></p>
+                    <p>{data.age}</p>
+                    <p>{data.date}</p>
+                    <p>{data.programming}</p>
+                </div>
               </div>
           </main>
         </div>
