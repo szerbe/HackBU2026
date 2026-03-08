@@ -27,8 +27,7 @@ const Home = () => {
             </h1>
           </header>
           <main className="p-4">
-            <p>Output recipe here</p>
-            {query}
+            <p>Output recipe here {query}</p>
           </main>
         </div>
       </div>
