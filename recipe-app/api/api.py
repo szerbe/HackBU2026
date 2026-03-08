@@ -1,14 +1,15 @@
-from flask import Flask, jsonify
+from flask import Flask, request
+from recipe_scrapers import scrape_me
+
 
 app = Flask(__name__)
 
-@app.route('/data')
-def get_time():
-    return jsonify({
-        'Name':"geek", 
-        "Age":"22",
-        "programming":"python"
-        })
+#takes url as a string
+@app.route('/data', methods=['POST'])
+def get_info():
+    data = request.form.get('data')
+    scraper = scrape_me(data)
+    return scraper.to_json()
 
 
 if __name__ == '__main__':
