@@ -48,13 +48,15 @@ const Home = () => {
             </h1>
           </header>
           <main className="p-4">
-            <p>Output recipe here</p>
-            <h1>React and flask</h1>
-                {/* Calling a data from setdata for showing */}
-                <p>{data.name}</p>
-                <p>{data.age}</p>
-                <p>{data.date}</p>
-                <p>{data.programming}</p>
+            <div className="inline-block center">
+              <p>Output recipe here</p>
+              <h1>React and flask</h1>
+                  {/* Calling a data from setdata for showing */}
+                  <p>{data.name}</p>
+                  <p>{data.age}</p>
+                  <p>{data.date}</p>
+                  <p>{data.programming}</p>
+              </div>
           </main>
         </div>
       </div>
