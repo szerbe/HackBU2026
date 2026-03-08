@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBar from "../components/Searchbar";
 import cake from "./cake.svg";
 //import recipe from "../svgs/recipe.svg";
@@ -10,6 +10,27 @@ const Home = () => {
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
   }
+  const [data, setdata] = useState({
+        name: "",
+        age: 0,
+        date: "",
+        programming: "",
+  });
+
+    // Using useEffect for single rendering
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/data").then((res) =>
+            res.json().then((data) => {
+                setdata({
+                    name: data.Name,
+                    age: data.Age,
+                    date: data.Date,
+                    programming: data.programming,
+                });
+            })
+            .catch((err) => console.error("Error parsing JSON:", err))
+        ).catch((err) => console.error("Fetch error:", err));;
+    }, []);
 
   return (
     <div className="bg-(--primary-color) flex min-h-screen">
@@ -31,7 +52,15 @@ const Home = () => {
             </h1>
           </header>
           <main className="p-4">
-            <p><button></button></p>
+            <div className="inline-block center">
+              <p>Output recipe here</p>
+              <h1>React and flask</h1>
+                  {/* Calling a data from setdata for showing */}
+                  <p>{data.name}</p>
+                  <p>{data.age}</p>
+                  <p>{data.date}</p>
+                  <p>{data.programming}</p>
+              </div>
           </main>
         </div>
       </div>
