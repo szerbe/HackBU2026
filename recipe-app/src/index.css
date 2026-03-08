@@ -26,3 +26,19 @@
   @apply 
   bg-(--primary-color-accent-three) shadow-lg;
 }
+
+.sml-btn {
+  @apply 
+  border
+  px-1
+  py-0.5
+  rounded 
+  font-semibold 
+  border-(--primary-color-accent-four)
+  transition duration-150 ease-in-out;
+}
+
+.sml-btn:hover {
+  @apply 
+  bg-(--primary-color-accent-three) shadow-lg;
+}
