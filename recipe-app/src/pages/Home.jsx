@@ -64,7 +64,7 @@ const Home = () => {
           <main className="p-4">
             <div className="grid place-items-center font-['Patrick_Hand'] p-4">
               <div className="recipe-output">
-                <h2>{data.name}</h2> <button className="sml-btn" onClick={handleMetricConversion}>Convert To Metric!</button>
+                <h2>{data.name}</h2>
                 <p>Prep + Cook Time: {data.time} minutes</p>
                 <h3>Ingredients:</h3>
                 <ul>
