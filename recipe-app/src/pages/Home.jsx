@@ -8,35 +8,39 @@ const Home = () => {
 
   const [query, setQuery] = useState("");
 
+  const [data, setdata] = useState({
+    name: "",
+    ingredients: [],
+    instructions: "",
+    time: ""
+  });
+
   const handleSearch = (searchQuery) => {
     setQuery(searchQuery);
+
+    const formData = new FormData();
+    formData.append('data', searchQuery);
+  
+
+    fetch("http://127.0.0.1:5000/data", {
+          method: 'POST',
+          body: formData 
+    }).then(res => res.json())
+  .then(recipeData => {
+    setdata({
+      name: recipeData.title,
+      ingredients: recipeData.ingredients,
+      instructions: recipeData.instructions,
+      time: recipeData.total_time
+    });
+  })
+  .catch(err => console.error("Error:", err));
   }
 
   const handleMetricConversion = () => {
     alert("Button was clicked!");
     // You can put any JavaScript code here
   };
-
-  const [data, setdata] = useState({
-        name: "",
-        age: 0,
-        date: "",
-        programming: "",
-  });
-
-    // Using useEffect for single rendering
-    useEffect(() => {
-        fetch("http://127.0.0.1:5000/data").then((res) =>
-            res.json().then((data) => {
-                setdata({
-                    name: data.Name,
-                    age: data.Age,
-                    programming: data.programming,
-                });
-            })
-            .catch((err) => console.error("Error parsing JSON:", err))
-        ).catch((err) => console.error("Fetch error:", err));;
-    }, []);
 
   return (
     <div className="bg-(--primary-color) flex min-h-screen">
@@ -59,19 +63,17 @@ const Home = () => {
           </header>
           <main className="p-4">
             <div className="grid place-items-center font-['Patrick_Hand'] p-4">
-              <div className="text-left">
-                <p>Output recipe here <button 
-                  onClick={handleMetricConversion} 
-                  class="sml-btn">Convert to metric!
-                  </button>
-                </p>
-                    {/* Calling a data from setdata for showing */}
-                    <p><CheckBox label={" " + data.name}/></p>
-                    <p>{data.age}</p>
-                    <p>{data.date}</p>
-                    <p>{data.programming}</p>
-                </div>
+              <div className="recipe-output">
+                <h2>{data.name}</h2> <button className="sml-btn" onClick={handleMetricConversion}>Convert To Metric!</button>
+                <p>Prep + Cook Time: {data.time} minutes</p>
+                <h3>Ingredients:</h3>
+                <ul>
+                  {data.ingredients?.map((ing, i) => <li key={i}>{ing}</li>)}
+                </ul>
+                <h3>Instructions:</h3>
+                <p>{data.instructions}</p>
               </div>
+            </div>
           </main>
         </div>
       </div>
