@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SearchBar from "../components/Searchbar";
-
+import cake from "./cake.svg";
+//import recipe from "../svgs/recipe.svg";
 
 const Home = () => {
 
@@ -18,7 +19,10 @@ const Home = () => {
         <div className="p-8">
           <header className="bg-(--primary-color-accent-one) p-4 rounded-sm">
             <h1 className="text-3xl font-bold">
-              <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
+              <div className="flex text-center justify-content-center align-items-center gap-4">
+                <img src={cake} alt="Cake" className="w-9 h-10 display-flex" />
+                <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
+              </div>
               <SearchBar  
                 Text="Put your URL here" 
                 className="font-['Patrick_Hand'] center text-center inline-block bg-(--primary-color-accent-two) p-4 rounded-lg"
