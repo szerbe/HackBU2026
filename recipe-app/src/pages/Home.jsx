@@ -52,7 +52,7 @@ const Home = () => {
             <h1 className="text-3xl font-bold">
               <div className="flex justify-center items-center">
                 <img src={cake} alt="Cake" className="w-9 h-10 display-flex"/>
-                <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Converter!</p>
+                <p className="font-['Patrick_Hand'] text-center text-(--t-color)">Welcome to the Recipe Scraper!</p>
               </div>
               <SearchBar  
                 Text="Put your recipe link here!" 
